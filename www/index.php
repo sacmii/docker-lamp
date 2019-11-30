@@ -707,7 +707,11 @@
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <form 
+    id="test-form"
+     class="white-popup-block mfp-hide"
+    action="login.php" method="post"
+    >
         <div class="popup_box ">
             <div class="popup_inner">
                 <div class="logo text-center">
@@ -716,13 +720,13 @@
                     </a>
                 </div>
                 <h3>Sign in</h3>
-                <form action="#">
+                <form>
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Enter email">
+                            <input name="username" type="email" placeholder="Enter email">
                         </div>
                         <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
+                            <input name="password" type="password" placeholder="Password">
                         </div>
                         <div class="col-xl-12">
                             <button type="submit" class="boxed_btn_green">Sign in</button>
