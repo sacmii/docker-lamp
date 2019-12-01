@@ -710,7 +710,7 @@
     <form 
     id="test-form"
      class="white-popup-block mfp-hide"
-    action="login.php" method="post"
+     action="login.php" method="post"
     >
         <div class="popup_box ">
             <div class="popup_inner">
@@ -719,8 +719,8 @@
                         <img src="img/form-logo.png" alt="">
                     </a>
                 </div>
+                <form action="login.php" method="post">
                 <h3>Sign in</h3>
-                <form>
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
                             <input name="username" type="email" placeholder="Enter email">
@@ -750,7 +750,7 @@
                     </a>
                 </div>
                 <h3>Resistration</h3>
-                <form action="#">
+                <form action="signup.php">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
                             <input type="email" placeholder="Enter email">
