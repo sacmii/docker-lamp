@@ -15,12 +15,16 @@ function checkUsernameAndPassword($user,$pass){
     require 'connection.php';
     $user = testInput($user);
     $pass = testInput($pass);
-    $query = "SELECT id from Person WHERE username LIKE '$user' AND password LIKE '$pass'";
+    $response = NULL;
+    $query = "SELECT * from Person WHERE username = '$user' AND password = '$pass'";
     $result = mysqli_query($conn, $query);
-    if(mysqli_num_rows($result)==1){
-        return true;
+    if(mysqli_num_rows($result)>=1){
+        while($row = mysqli_fetch_array($result)){
+          return $row["username"];
+        }
+    }else{
+      return $response;
     }
-    return false;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,9 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if(is_null($error)){
     $result = checkUsernameAndPassword($username,$password);
-    echo $result;
+    if(empty($result)){
+      echo "Failed"; 
+    }else{
+      echo "Successs".$result;
+    }
   }else{
-    echo $error;
+    echo "Error";
   }
 }
 ?>
